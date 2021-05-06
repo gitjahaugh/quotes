@@ -3,10 +3,10 @@
     // Create a database connection using a class
     class Database {
         // Database parameters
-        private $host = 'localhost';
-        private $db_name = 'quotesdb';
-        private $username = 'root';
-        private $password = 'sesame';
+        private $host = 'frwahxxknm9kwy6c.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	';
+        private $db_name = 'scif14nniu3kzuc5';
+        private $username = 'dq2vnt8sgb11rgn8';
+        private $password = 'kkqkxaorr213zyhy';
         private $conn;
 
         // Database connection using a try/catch block

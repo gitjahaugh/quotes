@@ -17,8 +17,10 @@
             $password = $dbparts['pass'];
             $database = ltrim($dbparts['path'],'/');
 
+            $dsn = "mysql:host={$hostname};dbname={$database}"
+
             try {
-                $this->conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+                $this->conn = new PDO($dsn, $username, $password);
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (PDOExecption $e) {
                 echo 'Connection Error: ' .$e->getMessage();

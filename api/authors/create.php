@@ -14,17 +14,11 @@
 
     $data = json_decode(file_get_contents('php://input'));
 
-    if (!isset($data->author) || empty($data->author)) {
-        echo json_encode(
-            array('message' => 'Author Not Created')
-        );
-        die();
-    }
-
     $author->author = $data->author;
 
-    if(!empty($auth->author)) {
-        $auth->create();
+    if(!empty($author->author)) {
+        //create category
+        $author->create();
         echo json_encode(
             array('message' => 'Author created')
         );

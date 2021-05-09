@@ -15,17 +15,17 @@
 
     $quote->read_single();
 
-    $quoteArray = array(
+    $quote_arr = array(
         'id' => $quote->id,
+        'quote' => $quote->quote,
         'category' => $quote->category,
-        'author' => $quote->author,
-        'quote' => $quote->quote
+        'author' => $quote->author
     );
 
-    if (empty($quoteArray['quote'])) {
+    if (empty($quote_arr['quote'])) {
         echo json_encode(
             array('message' => "No quotes found.")
         );
     } else {
-        echo json_encode($quoteArray);
+        echo json_encode($quote_arr);
     }

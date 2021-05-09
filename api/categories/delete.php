@@ -17,8 +17,8 @@
 
     $category->id = $data->id;
 
-    if(!empty($cat->id)) {
-        $cat->delete();
+    if(!empty($category->id)) {
+        $category->delete();
         echo json_encode(
             array('message' => 'Category deleted')
         );

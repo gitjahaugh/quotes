@@ -14,15 +14,15 @@
     
     $category->read_single();
 
-    $categoryArray = array(
+    $category_arr = array(
         'id' => $category->id,
         'category' => $category->category,
     );
 
-    if (empty($categoryArray['category'])) {
+    if (empty($category_arr['category'])) {
         echo json_encode(
             array('message' => "No category found.")
         );
     } else {
-        echo json_encode($categoryArray);
+        echo json_encode($category_arr);
     }

@@ -16,9 +16,9 @@
 
     $category->category = $data->category;
 
-    if(!empty($cat->category)) {
+    if(!empty($category->category)) {
         //create category
-        $cat->create();
+        $category->create();
         echo json_encode(
             array('message' => 'Category created')
         );

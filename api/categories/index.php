@@ -10,19 +10,19 @@
 
     $category = new Category($db);
     $result = $category->read();
-    $numResults = $result->rowCount();
+    $num = $result->rowCount();
 
-    if ($numResults > 0) {
-        $categoryArray = array();
+    if ($num > 0) {
+        $category_arr = array();
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
-            $categoryItem = array(
+            $category_item = array(
                 'id' => $id, 
                 'category' => $category
             );
-            array_push($categoryArray, $categoryItem);
+            array_push($category_arr, $category_item);
         }
-        echo json_encode($categoryArray);
+        echo json_encode($category_arr);
     } else {
         echo json_encode(
             array('message' => "No categories found.")

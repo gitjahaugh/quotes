@@ -10,19 +10,19 @@
 
     $author = new Author($db);
     $result = $author->read();
-    $numResults = $result->rowCount();
+    $num = $result->rowCount();
 
-    if ($numResults > 0) {
-        $authorArray = array();
+    if ($num > 0) {
+        $author_arr = array();
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
-            $authorItem = array(
+            $author_item = array(
                 'id' => $id, 
                 'author' => $author
             );
-            array_push($authorArray, $authorItem);
+            array_push($author_arr, $author_item);
         }
-        echo json_encode($authorArray);
+        echo json_encode($autho_arry);
     } else {
         echo json_encode(
             array('message' => "No authors found.")

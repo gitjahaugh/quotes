@@ -18,7 +18,7 @@
     $quote->authorId = $data->authorId;
     $quote->quote = $data->quote;
 
-    if(!emtpy($quote->quote) && !empty($quote->authorId) && !empty($quote->categoryId)) {
+    if(!empty($quote->quote) && !empty($quote->authorId) && !empty($quote->categoryId)) {
         $quote->create();
         echo json_encode(
             array('message' => 'Quote creaed')

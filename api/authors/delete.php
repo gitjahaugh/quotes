@@ -14,17 +14,10 @@
 
     $data = json_decode(file_get_contents('php://input'));
 
-    if (!isset($data->id) || empty($data->id)) {
-        echo json_encode(
-            array('message' => 'Author Not Deleted')
-        );
-        die();
-    }
-
     $author->id = $data->id;
 
-    if(!empty($auth->id)) {
-        $auth->delete();
+    if(!empty($author->id)) {
+        $author->delete();
         echo json_encode(
             array('message' => 'Author deleted')
         );

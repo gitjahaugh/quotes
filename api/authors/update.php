@@ -17,8 +17,8 @@
     $author->author = $data->author;
     $author->id = $data->id;
 
-    if(!empty($auth->author)) {
-        $auth->update();
+    if(!empty($author->author)) {
+        $author->update();
         echo json_encode(
             array('message' => 'Author updated')
         );

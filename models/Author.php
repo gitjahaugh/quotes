@@ -70,11 +70,7 @@
             $stmt->bindParam(':author', $this->author);
             $stmt->bindParam(':id', $this->id);
             if ($stmt->execute()) {
-                if ($stmt->rowCount() > 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return true;
             }
             printf('Error: %s.\n', $stmt->error);
             return false;
@@ -89,11 +85,7 @@
             $this->id = htmlspecialchars(strip_tags($this->id));
             $stmt->bindParam(':id', $this->id);
             if ($stmt->execute()) {
-                if ($stmt->rowCount() > 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return true;
             }
             printf('Error: %s.\n', $stmt->error);
             return false;
